@@ -49,7 +49,7 @@ router.get("/:id", (req, res) => {
 //add user
 router.post('/', (req, res) => {
   User.create({
-    name: req.body.name,
+    name: req.body.username,
     email: req.body.email,
     password: req.body.password,
   })
@@ -63,29 +63,9 @@ router.post('/', (req, res) => {
   });
 });
 
-// Update user
-router.put('/:id', (req, res) => {
-  User.update(req.body, {
-      individualHooks: true,
-      where: {
-          id: req.params.id
-    }
-  })
-    .then(dbUserData => {
-      if (!dbUserData[0]) {
-        res.status(404).json({ message: 'No user found with this id' });
-        return;
-      }
-      res.json(dbUserData);
-    })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-});
-
 //log in the user
 router.post("/login", (req, res) => {
+  console.log(req.body.email)
   User.findOne({
     where: {
       email: req.body.email,
@@ -127,23 +107,5 @@ router.post("/logout", (req, res) => {
   }
 });
 
-//DELETE User specific ID
-router.delete("/:id", (req, res) => {
-  User.destroy({
-    where: {
-      id: req.params.id,
-    },
-  })
-    .then((dbUserData) => {
-      if (!dbUserData) {
-        res.status(404).json({ message: "No user found with this id" });
-        return;
-      }
-      res.json(dbUserData);
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-});
+
 module.exports = router;

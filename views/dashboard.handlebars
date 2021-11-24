@@ -1,18 +1,16 @@
-    <div class="mb-5 pt-3">
-        <a href="/dashboard/create/"><button id="create-post" class="button is-primary is-pulled-right">create post</button></a>
-        
-        <h2 class="title pb-4">dashboard: your posts</h2><hr>
-{{#if posts.length}}
-    </div>
+<div class="mb-5 pt-3 container">
+    <h2 class="col-12 text-center">Dashboard | My Post</h2><hr>
+    {{#if posts.length}}
+</div>
 
-    {{#each posts as |post|}}
-        {{> post_info post}}
-        
-            <a href="/dashboard/edit/{{post.id}}"><button class="button mb-5 ml-5 is-warning">edit post</button></a>
-        </div>
-    {{/each}}
+{{#each posts as | post|}}
+    {{> post_info post}}
+{{/each}}
 
 {{else}}
-<h6 class="pb-4 has-text-centered is-italic">you do not currently have any posts</h6>
-
+    
+<h6 class="text-center">You currently have no post(s)</h6>
+<h6 class="text-center">
+    <a href="../dashboard/create/">Click here to add a new post</a>
+</h6>
 {{/if}}
