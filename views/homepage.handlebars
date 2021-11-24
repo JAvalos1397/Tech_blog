@@ -1,9 +1,13 @@
-
-</div>
 {{#each posts as |post|}}
 
 {{> post-info post }}
+</div>
+
 {{else}}
-<div class="position-relative">
-  <div class="position-absolute top-0 start-0">there are currently no posts</div>
+<h6 class="text-center">There are currently no post(s)</h6>
+<h6 class="text-center">
+    <a href="../dashboard/create/">
+        Click here to add your own post
+    </a>
+</h6>
 {{/each}}
