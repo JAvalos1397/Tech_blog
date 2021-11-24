@@ -1,20 +1,45 @@
-<div class="column">
-<h2 class="title pb-4">login:</h2><hr>
-<form class="login-form">
-  <div>
-    <label for="email-login">email:</label>
-    <input type="text" id="email-login" />
-  </div>
-  <div>
-    <label for="password-login">password:</label>
-    <input type="password" id="password-login" />
-  </div>
-  <div>
-    <button type="submit" class="button is-primary">login</button>
-    <a href="/signup"><button type="button" class="button is-danger">signup</button></a>
-  </div>
-</form>
-</div>
+{{!-- login --}}
+<div class="container">
+  <div class="row">
 
+    <div class="col .bg-success">
+      <h2>Login</h2>
+      <form class="login_form">
+        <div class="mb-3">
+          <label for="email_login" class="form-label">Email:</label>
+          <input type="text" class="form-control" id="email_login" placeholder="Enter email">
+        </div>
+        <div class="mb-3">
+          <label for="password_login" class="form-label">Password:</label>
+          <input type="text" class="form-control" id="password_login" placeholder="Enter Password">
+        </div>
+        <button type="button" class="btn btn-primary"id='login_btn'>Login</button>
+      </form>
+    </div>
+
+
+    {{!-- sign up --}}
+    <div class="col .bg-success">
+      <h2>Sign up</h2>
+      <form class="signup_form">
+        <div class="mb-3">
+          <label for="name_signup" class="form-label">Name:</label>
+          <input type="text" class="form-control" id="name_signup" placeholder="Enter name">
+        </div>
+        <div class="mb-3">
+          <label for="email_signup" class="form-label">Email:</label>
+          <input type="text" class="form-control" id="email_signup" placeholder="Enter email">
+        </div>
+        <div class="mb-3">
+          <label for="password_signup" class="form-label">Password:</label>
+          <input type="text" class="form-control" id="password_login" placeholder="Enter Password">
+        </div>
+        <button type="button" class="btn btn-success" id="signup_btn">Signup</button>
+
+      </form>
+    </div>
+  </div>
+</div>
 <!-- javascript file-->
-<script src="/javascript/login.js"></script>
+<script src="/js/login.js"></script>
+<script src="/js/signup"
