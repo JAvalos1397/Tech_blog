@@ -67,3 +67,5 @@ router.get("/:id", (req, res) => {
         res.status(500).json(err); //REST api needs status
       });
   });
+
+  module.exports = router;
