@@ -24,4 +24,4 @@ async function newFormHandler(event) {
   }
 };
 
-document.querySelector('#create-post-btn').addEventListener('submit', newFormHandler);
+document.querySelector('#create-post-btn').addEventListener('click', newFormHandler);
