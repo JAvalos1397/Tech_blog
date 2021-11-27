@@ -30,7 +30,7 @@ router.get("/:id", (req, res) => {
       where: {
         id: req.params.id,
       },
-      attributes: ["id", "title", "body", "user_id"],
+      attributes: ["id", "title", "content", "user_id"],
       include: [
         {
           model: Comment,
@@ -53,19 +53,18 @@ router.get("/:id", (req, res) => {
   });
   
 // add post
-  router.post("/", (req, res) => {
-    Post.create({
-      title: req.body.title,
-      body: req.body.body,
-      user_id: req.session.user_id,
-    })
-      .then((dbPostData) => {
-        res.json(dbPostData);
+router.post('/', (req, res) => {
+  
+  Post.create({
+          title: req.body.title,
+          content: req.body.content,
+          user_id: req.session.user_id
       })
-      .catch((err) => {
-        console.log(err);
-        res.status(500).json(err); //REST api needs status
+      .then(dbPostData => res.json(dbPostData))
+      .catch(err => {
+          console.log(err);
+          res.status(500).json(err);
       });
-  });
+});
 
   module.exports = router;
